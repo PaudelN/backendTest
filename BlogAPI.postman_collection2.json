@@ -1,0 +1,128 @@
+{
+  "info": {
+    "_postman_id": "75e51b78-139e-4527-82f1-5d3a9f538747",
+    "name": "BlogAPI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "32988857"
+  },
+  "item": [
+    {
+      "name": "Read All blogs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/blogs"
+      },
+      "response": {
+        "success": true,
+        "blogs": [
+          {
+            "_id": "6675787a03f1ecacf41825e0",
+            "title": "My First Blog Post",
+            "description": "This is my first blog post and i am very excited for this",
+            "category": "Technology",
+            "__v": 0
+          },
+          {
+            "_id": "66757b87652306ba842dcc7f",
+            "title": "My Tenth Blog Post",
+            "description": "This is my tenth blog post and i am so not excited for this",
+            "category": "Adventure",
+            "__v": 0
+          },
+          {
+            "_id": "6675ac5067dc4b2c30f3cbde",
+            "title": "My Second Blog Post",
+            "description": "This is my Second blog post and i am very sad for this",
+            "category": "Social Issues",
+            "__v": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Create new Blog(Post)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\":\"My Second Blog Post\",\r\n    \"description\":\"This is my Second blog post and i am very sad for this\",\r\n    \"category\":\"Social Issues\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/blog/new"
+      },
+      "response": {
+        "success": true,
+        "blog": {
+          "title": "My Second Blog Post",
+          "description": "This is my Second blog post and i am very sad for this",
+          "category": "Social Issues",
+          "_id": "6675ac5067dc4b2c30f3cbde",
+          "__v": 0
+        }
+      }
+    },
+    {
+      "name": "update Blog",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\":\"My Tenth Blog Post\",\r\n    \"description\":\"This is my tenth blog post and i am so not excited for this\",\r\n    \"category\":\"Adventure\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/blog/66757b87652306ba842dcc7f"
+      },
+      "response": {
+        "success": true,
+        "blog": {
+          "_id": "66757b87652306ba842dcc7f",
+          "title": "My Tenth Blog Post",
+          "description": "This is my tenth blog post and i am so not excited for this",
+          "category": "Adventure",
+          "__v": 0
+        }
+      }
+    },
+    {
+      "name": "Read Blog by Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\":\"My First Blog Post\",\r\n    \"description\":\"This is my first blog post and i am very excited for this\",\r\n    \"category\":\"Technology\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/blogs/66757b87652306ba842dcc7f"
+      },
+      "response": {
+        "success": true,
+        "blogs": {
+          "_id": "66757b87652306ba842dcc7f",
+          "title": "My Tenth Blog Post",
+          "description": "This is my tenth blog post and i am so not excited for this",
+          "category": "Adventure",
+          "__v": 0
+        }
+      }
+    }
+  ]
+}
